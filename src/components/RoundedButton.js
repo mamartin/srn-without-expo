@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: Colors.background,
     borderColor: Colors.primary,
-    borderWidth: 2,
+    borderWidth: 3,
     width: Metrics.buttons.height,
     height: Metrics.buttons.height,
     borderRadius: Metrics.buttons.height / 2,
@@ -21,13 +21,14 @@ const styles = StyleSheet.create({
 type Props = {|
   +onPress: () => void,
   +children: string,
+  +testID: string,
 |}
 
 export default class RoundedButton extends React.PureComponent<Props> {
   render() {
-    const { children, onPress } = this.props
+    const { children, onPress, testID } = this.props
     return (
-      <TouchableOpacity onPress={onPress} style={styles.button}>
+      <TouchableOpacity onPress={onPress} style={styles.button} testID={testID}>
         <Text>{children}</Text>
       </TouchableOpacity>
     )

@@ -39,8 +39,11 @@ class RootContainer extends React.PureComponent<Props> {
     return (
       <SafeAreaView style={styles.container}>
         <FlatList
-          renderItem={({ item }) => (
-            <ListItem onPress={() => this.navigate(item.id)}>
+          renderItem={({ item, index }) => (
+            <ListItem
+              onPress={() => this.navigate(item.id)}
+              testID={`movieLink${index}`}
+            >
               {item.title}
             </ListItem>
           )}
@@ -48,7 +51,10 @@ class RootContainer extends React.PureComponent<Props> {
           keyExtractor={item => item.id.toString()}
         />
 
-        <RoundedButton onPress={() => onGetMovies(moviesData)}>
+        <RoundedButton
+          onPress={() => onGetMovies(moviesData)}
+          testID="downloadMoviesButton"
+        >
           Download movies
         </RoundedButton>
       </SafeAreaView>
