@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
     borderColor: Colors.primary,
     borderWidth: 3,
-    width: Metrics.buttons.height,
+    width: "100%",
     height: Metrics.buttons.height,
     borderRadius: Metrics.buttons.height / 2,
     justifyContent: "center",

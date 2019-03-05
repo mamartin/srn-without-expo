@@ -1,6 +1,6 @@
 export default {
   buttons: {
-    height: 84,
+    height: 50,
   },
   padding: {
     section: 15,
