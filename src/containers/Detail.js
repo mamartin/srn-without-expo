@@ -3,7 +3,7 @@ import { SafeAreaView, Text, StyleSheet } from "react-native"
 import { connect } from "react-redux"
 
 const styles = StyleSheet.create({
-  container: { flex: 1 }
+  container: { flex: 1 },
 })
 
 // For illustration purposes only
@@ -23,12 +23,12 @@ class Detail extends React.PureComponent<null> {
   }
 }
 const mapStateToProps = (state, props) => ({
-  movie: getMovieById(state, props.navigation.state.params.movieId)
+  movie: getMovieById(state, props.navigation.state.params.movieId),
 })
 
 const mapDispatchToProps = {}
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Detail)
